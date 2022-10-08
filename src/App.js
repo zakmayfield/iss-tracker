@@ -22,8 +22,6 @@ function App() {
   const [currentLocationData, setCurrentLocationData] = useState(data);
   const [showPopup, setShowPopup] = useState(true);
 
-  console.log(data);
-
   useEffect(() => {
     axios
       .get('http://api.open-notify.org/iss-now.json')
@@ -38,6 +36,8 @@ function App() {
           longitude: res.data.iss_position.longitude,
           latitude: res.data.iss_position.latitude,
         });
+
+        // <<<<< UNCOMMENT TO CALL OPENCAGE TO GET LOCATION DATA >>>>>
 
         // callOpenCage(
         //   res.data.iss_position.latitude,
